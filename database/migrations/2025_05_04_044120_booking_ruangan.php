@@ -38,10 +38,23 @@ return new class extends Migration
             $table->enum('status', ['Booked', 'Checked-in', 'Checked-out', 'Cancelled'])->default('Booked');
             $table->timestamps();
         });
+
+        // Tabel Payments
+        Schema::create('payments_007', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('booking_id')->constrained('bookings_007')->onDelete('cascade');
+            $table->decimal('amount_paid', 10, 2);
+            $table->enum('payment_method', ['Credit Card', 'Bank Transfer', 'Cash', 'Online Payment']);
+            $table->enum('payment_status', ['Pending', 'Completed', 'Failed', 'Refunded'])->default('Pending');
+            $table->dateTime('payment_date');
+            $table->string('transaction_reference')->nullable();  // Optional, for tracking the transaction
+            $table->timestamps();
+        });
     }
 
     public function down(): void
     {
+        Schema::dropIfExists('payments_007');
         Schema::dropIfExists('bookings_007');
         Schema::dropIfExists('rooms_007');
         Schema::dropIfExists('users_007');

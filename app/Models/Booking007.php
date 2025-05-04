@@ -23,4 +23,10 @@ class Booking007 extends Model
     {
         return $this->belongsTo(Room007::class, 'room_id');
     }
+
+    public function payment()
+    {
+    return $this->hasOne(Payment007::class, 'booking_id');
+    }
+
 }

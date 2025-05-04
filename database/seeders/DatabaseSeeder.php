@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SeederRoom::class,
             SeederUser::class,
             SeederBookings::class,
+            SeederPayments::class,
         ]);
     }
 }

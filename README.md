@@ -84,18 +84,40 @@ Fitur Utama
   </tbody>
 </table>
 
+4. Tabel Payments
+<h3>4. Tabel Payments</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Tipe Data</th>
+      <th>Deskripsi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>id</td><td>INT (auto increment, primary key)</td><td>ID unik untuk setiap pembayaran</td></tr>
+    <tr><td>booking_id</td><td>INT (foreign key)</td><td>ID booking yang terkait (relasi ke tabel bookings_007)</td></tr>
+    <tr><td>amount_paid</td><td>DECIMAL(10,2)</td><td>Jumlah uang yang dibayarkan</td></tr>
+    <tr><td>payment_method</td><td>ENUM('Credit Card', 'Bank Transfer', 'Cash', 'Online Payment')</td><td>Metode pembayaran yang digunakan</td></tr>
+    <tr><td>payment_status</td><td>ENUM('Pending', 'Completed', 'Failed', 'Refunded')</td><td>Status pembayaran</td></tr>
+    <tr><td>payment_date</td><td>DATETIME</td><td>Tanggal dan waktu pembayaran dilakukan</td></tr>
+    <tr><td>transaction_reference</td><td>VARCHAR (nullable)</td><td>Referensi transaksi (opsional)</td></tr>
+    <tr><td>created_at</td><td>TIMESTAMP</td><td>Waktu pembuatan data pembayaran</td></tr>
+    <tr><td>updated_at</td><td>TIMESTAMP</td><td>Waktu terakhir kali data diperbarui</td></tr>
+  </tbody>
+</table>
+
+
 Jenis Relasi dan Tabel yang Berelasi
-1.	Tabel users_007
-      •	Berisi data semua pengguna (Admin, Receptionist, Customer)
-      •	Relasi: One-to-Many dengan bookings_007. Satu user bisa memiliki banyak booking(1 user → banyak bookings).
-2.	Tabel rooms_007
-      •	Berisi data ruangan (nama, kapasitas, harga, status).
-      •	Relasi: ne-to-Many dengan bookings_007. Satu ruangan bisa dibooking berkali-kali(1 room → banyak bookings).
-3.	Tabel bookings_007
-      •	Berisi data pemesanan ruangan oleh pengguna
-      •	Relasi: user_id → relasi ke users_007.id, room_id → relasi ke rooms_007.id, dan Setiap booking harus dimiliki oleh satu user dan satu ruangan (relasi Many-to-One ke users_007 dan rooms_007).
-
-
+1. users_007 ↔ bookings_007
+   Relasi: One-to-Many
+   Penjelasan:Satu user (Customer) bisa memiliki banyak booking.Field user_id pada tabel bookings_007 adalah foreign key yang mereferensikan id di users_007
+2. rooms_007 ↔ bookings_007
+   Relasi: One-to-Many
+   Penjelasan:satu ruangan bisa dibooking berkali-kali oleh user yang berbeda.Field room_id pada bookings_007 adalah foreign key dari rooms_007.
+3. bookings_007 ↔ payments_007
+   Relasi: One-to-One
+   Penjelasan:Satu booking bisa memiliki satu atau lebih record pembayaran.Field booking_id di payments_007 adalah foreign key yang mereferensikan id di bookings_007.
 
 
 
