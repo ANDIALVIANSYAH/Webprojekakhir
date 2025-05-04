@@ -16,6 +16,7 @@ Fitur Utama
 •	Proses penyewaan : Receptionist dapat melihat daftar booking yang masuk, serta memproses Check-In saat sewa dimulai dan Check-Out saat selesai.
 •	Management pengguna : Admin dapat mengelola data pengguna (Receptionist dan Customer), termasuk menambahkan, mengedit, dan menghapus akun.
 •	Role Management : Admin,Receptionist,Customer memiliki hak akses yang berbeda sesuai dengan peran mereka.
+•	Pengelolaan pembayran : Customer dapat melakukan pembayaran setelah booking ruangan. Receptionist memverifikasi pembayaran dan mengubah statusnya. Admin dan Receptionist dapat melihat riwayat pembayaran, serta mengelola data jika ada kesalahan.
 
 1.	Tabel Users
 <h3>1. Tabel Users</h3>
