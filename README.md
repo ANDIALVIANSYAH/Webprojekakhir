@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Booking Ruangan Hotel</title>
-</head>
-<body>
-
-  <h1>Booking Ruangan Hotel</h1>
-  <p><strong>Nama:</strong> ANDIALVIANSYAH.S</p>
-  <p><strong>NIM:</strong> D0223007</p>
-  <p><strong>Mata Kuliah:</strong> FrameWork Web Based</p>
+<div align="center">
+    <h2 style="margin:0; font-size:3em; color:#333;">BOOKING RUANGAN HOTEL</h2>
+    <img src="/public/logo unsulbar.jpeg" alt="Logo Unsulbar" style="display:block; margin:1em auto; max-width:80%; height:auto;" />
+    <h2 style="margin:0; font-size:2em; color:#333;">ANDIALVIANSYAH.S</h2>
+    <h2 style="margin:0; font-size:2em; color:#333;">D0223007</h2>
+    <h2 style="margin:0; font-size:2em; color:#333;">FRAMEWORK WEB BASED</h2>
+    <h2 style="margin-top:0.5em; font-size:2em; color:#333;">2025</h2>
+  </div>
 
   <h2>Deskripsi</h2>
   <p>
